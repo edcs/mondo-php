@@ -1,0 +1,13 @@
+{
+    "name": "edcs/mondo-php",
+    "description": "A client for the Mondo API written in PHP",
+    "type": "package",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Edward Coleridge Smith",
+            "email": "e.coleridgesmith@edcs.me"
+        }
+    ],
+    "require": {}
+}
