@@ -26,43 +26,47 @@ abstract class Entity implements ArrayAccess
     /**
      * Whether a offset exists
      *
-     * @param mixed $offset
+     * @param mixed $key
      * @return boolean
      */
-    public function offsetExists($offset)
+    public function offsetExists($key)
     {
-        return array_key_exists($offset, $this->body);
+        return array_key_exists($key, $this->body);
     }
 
     /**
      * Offset to retrieve
      *
-     * @param mixed $offset
+     * @param mixed $key
      * @return mixed
      */
-    public function offsetGet($offset)
+    public function offsetGet($key)
     {
-        return $this->body[$offset];
+        return $this->body[$key];
     }
 
     /**
      * Offset to set.
      *
-     * @param mixed $offset
+     * @param mixed $key
      * @param mixed $value
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($key, $value)
     {
-        $this->body[$offset] = $value;
+        if (is_null($key)) {
+            $this->body[] = $value;
+        } else {
+            $this->body[$key] = $value;
+        }
     }
 
     /**
      * Offset to unset.
      *
-     * @param mixed $offset
+     * @param mixed $key
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($key)
     {
-        unset($this->body[$offset]);
+        unset($this->body[$key]);
     }
 }
