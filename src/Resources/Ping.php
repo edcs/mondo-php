@@ -3,27 +3,9 @@ namespace Edcs\Mondo\Resources;
 
 use Edcs\Mondo\Entitites\Ping\WhoAmI;
 use GuzzleHttp\Psr7\Request;
-use Http\Client\HttpClient;
 
-class Ping
+class Ping extends Resource
 {
-    /**
-     * Instance of the http client.
-     *
-     * @var HttpClient
-     */
-    private $client;
-
-    /**
-     * Ping constructor.
-     *
-     * @param HttpClient $client
-     */
-    public function __construct(HttpClient $client)
-    {
-        $this->client = $client;
-    }
-
     /**
      * Returns information about the current access token.
      *
@@ -32,7 +14,7 @@ class Ping
     public function whoAmI()
     {
         $request = new Request('get', '/ping/whoami');
-        $response = $this->client->sendRequest($request);
+        $response = $this->sendRequest($request);
 
         return new WhoAmI($response);
     }
