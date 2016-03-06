@@ -51,8 +51,10 @@ class EntityTest extends TestCase
         $this->assertEquals($json['foo'], $stub['foo']);
 
         $stub['foo'] = $unique = uniqid();
+        $stub[] = $unique;
 
         $this->assertEquals($unique, $stub['foo']);
+        $this->assertEquals($unique, $stub[0]);
     }
 
     /**
