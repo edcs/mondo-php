@@ -1,4 +1,5 @@
 <?php
+
 namespace Edcs\Mondo\Entitites\Ping;
 
 use Edcs\Mondo\Entitites\Entity;
@@ -8,7 +9,7 @@ class WhoAmI extends Entity
     /**
      * Returns true if the access token is authenticated, otherwise returns false.
      *
-     * @return boolean
+     * @return bool
      */
     public function getAuthenticated()
     {

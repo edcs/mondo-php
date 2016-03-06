@@ -15,9 +15,9 @@ class PingTest extends TestCase
     public function testWhoAmIEndpoint()
     {
         $json = [
-            'authenticated' => (boolean) rand(0, 1),
-            'client_id' => uniqid(),
-            'user_id' => uniqid()
+            'authenticated' => (bool) rand(0, 1),
+            'client_id'     => uniqid(),
+            'user_id'       => uniqid(),
         ];
 
         $client = m::mock(Client::class);

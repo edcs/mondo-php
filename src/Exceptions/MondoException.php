@@ -1,4 +1,5 @@
 <?php
+
 namespace Edcs\Mondo\Exceptions;
 
 use Exception;

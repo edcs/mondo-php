@@ -1,4 +1,5 @@
 <?php
+
 namespace Edcs\Mondo\Resources;
 
 use Edcs\Mondo\Entitites\Ping\WhoAmI;

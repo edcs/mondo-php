@@ -1,4 +1,5 @@
 <?php
+
 namespace Edcs\Mondo\Test;
 
 use Mockery as m;

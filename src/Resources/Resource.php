@@ -1,8 +1,9 @@
 <?php
+
 namespace Edcs\Mondo\Resources;
 
-use Exception;
 use Edcs\Mondo\Exceptions\HttpException;
+use Exception;
 use Http\Client\HttpClient;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
@@ -30,8 +31,10 @@ abstract class Resource
      * Makes an http request to the api.
      *
      * @param RequestInterface $request
-     * @return ResponseInterface
+     *
      * @throws HttpException
+     *
+     * @return ResponseInterface
      */
     protected function sendRequest(RequestInterface $request)
     {

@@ -1,4 +1,5 @@
 <?php
+
 namespace Edcs\Mondo\Entitites;
 
 use ArrayAccess;
@@ -24,10 +25,11 @@ abstract class Entity implements ArrayAccess
     }
 
     /**
-     * Whether a offset exists
+     * Whether a offset exists.
      *
      * @param mixed $key
-     * @return boolean
+     *
+     * @return bool
      */
     public function offsetExists($key)
     {
@@ -35,9 +37,10 @@ abstract class Entity implements ArrayAccess
     }
 
     /**
-     * Offset to retrieve
+     * Offset to retrieve.
      *
      * @param mixed $key
+     *
      * @return mixed
      */
     public function offsetGet($key)
