@@ -2,12 +2,12 @@
 
 namespace Edcs\Mondo\Test\Resources;
 
+use Edcs\Mondo\Test\TestCase;
 use GuzzleHttp\Psr7\Response;
 use Http\Adapter\Guzzle6\Client;
 use Mockery as m;
-use PHPUnit_Framework_TestCase;
 
-class Ping extends PHPUnit_Framework_TestCase
+class PingTest extends TestCase
 {
     /**
      * Ensures that a valid entity is returned when you call who am I on the ping resource.
@@ -23,6 +23,7 @@ class Ping extends PHPUnit_Framework_TestCase
         $client = m::mock(Client::class);
 
         $client->shouldReceive('sendRequest')
+               ->once()
                ->andReturn(new Response(200, [], json_encode($json)));
 
         $ping = new \Edcs\Mondo\Resources\Ping($client);
@@ -44,6 +45,7 @@ class Ping extends PHPUnit_Framework_TestCase
         $client = m::mock(Client::class);
 
         $client->shouldReceive('sendRequest')
+               ->once()
                ->andReturn(new Response(401));
 
         $ping = new \Edcs\Mondo\Resources\Ping($client);
