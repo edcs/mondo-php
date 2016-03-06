@@ -36,9 +36,20 @@ abstract class Resource
     protected function sendRequest(RequestInterface $request)
     {
         try {
-            return $this->client->sendRequest($request);
+            $response = $this->client->sendRequest($request);
         } catch (Exception $e) {
             throw new HttpException($e->getMessage(), $e->getCode());
         }
+
+        if ($response->getStatusCode() >= 400) {
+            throw new HttpException(
+                "Client error: `{$request->getMethod()} {$request->getUri()}` resulted in a ".
+                "`{$response->getStatusCode()} {$response->getReasonPhrase()}` response: ".
+                $response->getBody()->getContents(),
+                $response->getStatusCode()
+            );
+        }
+
+        return $response;
     }
 }

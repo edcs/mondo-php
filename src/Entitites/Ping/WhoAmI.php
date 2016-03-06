@@ -10,7 +10,7 @@ class WhoAmI extends Entity
      *
      * @return boolean
      */
-    public function authenticated()
+    public function getAuthenticated()
     {
         return $this->offsetGet('authenticated');
     }
@@ -20,7 +20,7 @@ class WhoAmI extends Entity
      *
      * @return string
      */
-    public function clientId()
+    public function getClientId()
     {
         return $this->offsetGet('client_id');
     }
@@ -30,7 +30,7 @@ class WhoAmI extends Entity
      *
      * @return string
      */
-    public function userId()
+    public function getUserId()
     {
         return $this->offsetGet('user_id');
     }
