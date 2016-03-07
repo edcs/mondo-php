@@ -23,6 +23,11 @@ composer require edcs/mondo-php
 If you're already using a different HTTP client in your project, you can check and see if there's already a PHP-HTTP
 adatapter available for it [here](http://docs.php-http.org/en/latest/clients.html).
 
+## Getting an Access Token
+
+If you'd like an easy method to create access tokens, you can use [this](https://github.com/edcs/oauth-mondo)
+provider for the [Legue OAuth 2.0 Client](https://github.com/thephpleague/oauth2-client).
+
 ## Getting Started
 
 To instantiate a new resource first you will need to create an instance of your PHP-HTTP client, this example uses
@@ -41,11 +46,6 @@ $client = new Http\Adapter\Guzzle6\Client($client);
 
 $ping = new Edcs\Mondo\Resources\Ping($client);
 ```
-
-## Getting an Access Token
-
-If you'd like an easy method to create access tokens, you can use [this](https://github.com/edcs/oauth-mondo)
-provider for the [Legue OAuth 2.0 Client](https://github.com/thephpleague/oauth2-client).
 
 ### Ping Resource
 
