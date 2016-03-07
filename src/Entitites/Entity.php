@@ -3,6 +3,8 @@
 namespace Edcs\Mondo\Entitites;
 
 use ArrayAccess;
+use Edcs\Mondo\Exceptions\MethodDoesNotExist;
+use Edcs\Mondo\Support\Str;
 use Psr\Http\Message\ResponseInterface;
 
 abstract class Entity implements ArrayAccess
@@ -17,11 +19,34 @@ abstract class Entity implements ArrayAccess
     /**
      * Entity constructor.
      *
-     * @param ResponseInterface $response
+     * @param array|ResponseInterface $response
      */
-    public function __construct(ResponseInterface $response)
+    public function __construct($response)
     {
-        $this->body = json_decode($response->getBody()->getContents(), true);
+        if (is_array($response)) {
+            $this->body = $response;
+        } else {
+            $this->body = json_decode($response->getBody()->getContents(), true);
+        }
+    }
+
+    /**
+     * Call method used to create getters for individual entity classes.
+     *
+     * @param string $name
+     * @param array $arguments
+     * @return string
+     * @throws MethodDoesNotExist
+     */
+    public function __call($name, $arguments)
+    {
+        $key = Str::camelToSnake(substr($name, 3));
+
+        if ($this->offsetExists($key)) {
+            return $this->offsetGet($key);
+        }
+
+        throw new MethodDoesNotExist('The method '.$name.' does not exist in '.get_class($this));
     }
 
     /**
