@@ -90,6 +90,18 @@ class EntityTest extends TestCase
     }
 
     /**
+     * Ensures that an entity can be created with an array.
+     *
+     * @expectedException \Edcs\Mondo\Exceptions\InvalidArgumentException
+     */
+    public function testEntityCannotBeCreatedWithIncorrectParameters()
+    {
+        $data = ['foo' => uniqid()];
+
+        $stub = new EntityStub(json_encode($data));
+    }
+
+    /**
      * Ensures that entity properties can be accessed with getters created via a magic method.
      */
     public function testPropertiesCanBeAccessedViaMagicMethod()
