@@ -15,7 +15,7 @@ class AccountsTest extends TestCase
     /**
      * Ensures that a collection of account entities are returned by the get accounts resource.
      */
-    public function testWhoAmIEndpoint()
+    public function testAccountsEndpoint()
     {
         $json = [
             'accounts' => [
@@ -54,7 +54,7 @@ class AccountsTest extends TestCase
      *
      * @expectedException \Edcs\Mondo\Exceptions\HttpException
      */
-    public function testWhoAmIEndpointNonAuthenticated()
+    public function testAccountsEndpointNonAuthenticated()
     {
         $client = m::mock(Client::class);
 
