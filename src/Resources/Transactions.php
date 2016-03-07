@@ -14,7 +14,8 @@ class Transactions extends Resource
      * @link https://getmondo.co.uk/docs/#list-transactions
      *
      * @param string $accountId
-     * @param bool $expandMerchant
+     * @param bool   $expandMerchant
+     *
      * @return Collection
      */
     public function get($accountId, $expandMerchant = true)
@@ -39,7 +40,8 @@ class Transactions extends Resource
      * @link https://getmondo.co.uk/docs/#list-transactions
      *
      * @param string $transactionId
-     * @param bool $expandMerchant
+     * @param bool   $expandMerchant
+     *
      * @return Transaction
      */
     public function find($transactionId, $expandMerchant = true)
@@ -66,8 +68,9 @@ class Transactions extends Resource
      * @link https://getmondo.co.uk/docs/#annotate-transaction
      *
      * @param string $transactionId
-     * @param array $metadata
-     * @param bool $expandMerchant
+     * @param array  $metadata
+     * @param bool   $expandMerchant
+     *
      * @return Transaction
      */
     public function annotate($transactionId, array $metadata, $expandMerchant = true)

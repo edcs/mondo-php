@@ -41,8 +41,8 @@ class Collection implements ArrayAccess, Iterator
      * Collection constructor.
      *
      * @param ResponseInterface $response
-     * @param string $namespace
-     * @param string $entity
+     * @param string            $namespace
+     * @param string            $entity
      */
     public function __construct(ResponseInterface $response, $namespace, $entity)
     {
@@ -85,6 +85,7 @@ class Collection implements ArrayAccess, Iterator
      *
      * @param mixed $key
      * @param mixed $value
+     *
      * @throws InvalidEntity
      */
     public function offsetSet($key, $value)
@@ -147,7 +148,7 @@ class Collection implements ArrayAccess, Iterator
     /**
      * Checks if current position is valid.
      *
-     * @return boolean
+     * @return bool
      */
     public function valid()
     {

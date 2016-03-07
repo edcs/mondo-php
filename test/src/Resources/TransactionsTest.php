@@ -33,8 +33,8 @@ class TransactionsTest extends TestCase
                     'is_load'         => rand(0, 1),
                     'settled'         => rand(0, 1),
                     'category'        => uniqid(),
-                ]
-            ]
+                ],
+            ],
         ];
     }
 

@@ -21,6 +21,7 @@ abstract class Entity implements ArrayAccess
      * Entity constructor.
      *
      * @param array|ResponseInterface $response
+     *
      * @throws InvalidArgumentException
      */
     public function __construct($response)
@@ -40,9 +41,11 @@ abstract class Entity implements ArrayAccess
      * Call method used to create getters for individual entity classes.
      *
      * @param string $name
-     * @param array $arguments
-     * @return string
+     * @param array  $arguments
+     *
      * @throws InvalidMethodException
+     *
+     * @return string
      */
     public function __call($name, $arguments)
     {

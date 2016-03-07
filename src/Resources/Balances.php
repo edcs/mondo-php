@@ -13,6 +13,7 @@ class Balances extends Resource
      * @link https://getmondo.co.uk/docs/#balance
      *
      * @param string $id
+     *
      * @return Balance
      */
     public function get($id)

@@ -25,8 +25,8 @@ class AccountsTest extends TestCase
                     'account_number' => uniqid(),
                     'sort_code'      => uniqid(),
                     'created'        => uniqid(),
-                ]
-            ]
+                ],
+            ],
         ];
 
         $client = m::mock(Client::class);

@@ -53,6 +53,7 @@ abstract class Resource
      *
      * @param array $parameters
      * @param $name
+     *
      * @return MultipartStream
      */
     protected function parseParameters(array $parameters, $name)

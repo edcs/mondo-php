@@ -19,7 +19,7 @@ class BalanacesTest extends TestCase
         $json = [
             'balance'     => uniqid(),
             'currency'    => uniqid(),
-            'spend_today' => uniqid()
+            'spend_today' => uniqid(),
         ];
 
         $client = m::mock(Client::class);

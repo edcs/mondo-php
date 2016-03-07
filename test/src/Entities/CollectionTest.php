@@ -21,8 +21,8 @@ class CollectionTest extends TestCase
             'data' => [
                 ['foo' => uniqid()],
                 ['foo' => uniqid()],
-                ['foo' => uniqid()]
-            ]
+                ['foo' => uniqid()],
+            ],
         ];
     }
 
