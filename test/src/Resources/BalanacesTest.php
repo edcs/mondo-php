@@ -14,7 +14,7 @@ class BalanacesTest extends TestCase
     /**
      * Ensures that a balanace entity is retured by the balances resource.
      */
-    public function testBalanceEndpoint()
+    public function testBalanceGet()
     {
         $json = [
             'balance'     => uniqid(),
@@ -42,7 +42,7 @@ class BalanacesTest extends TestCase
      *
      * @expectedException \Edcs\Mondo\Exceptions\HttpException
      */
-    public function testBalanceEndpointNonAuthenticated()
+    public function testBalanceGetNonAuthenticated()
     {
         $client = m::mock(Client::class);
 

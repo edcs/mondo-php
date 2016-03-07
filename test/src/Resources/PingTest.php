@@ -14,7 +14,7 @@ class PingTest extends TestCase
     /**
      * Ensures that a valid entity is returned when you call who am I on the ping resource.
      */
-    public function testWhoAmIEndpoint()
+    public function testWhoAmI()
     {
         $json = [
             'authenticated' => (bool) rand(0, 1),
@@ -42,7 +42,7 @@ class PingTest extends TestCase
      *
      * @expectedException \Edcs\Mondo\Exceptions\HttpException
      */
-    public function testWhoAmIEndpointNonAuthenticated()
+    public function testWhoAmINonAuthenticated()
     {
         $client = m::mock(Client::class);
 

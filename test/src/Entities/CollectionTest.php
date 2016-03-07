@@ -11,17 +11,27 @@ use GuzzleHttp\Psr7\Response;
 class CollectionTest extends TestCase
 {
     /**
-     * Ensures that the offset exists method is setup correctly.
+     * Creates a fake json transaction response.
+     *
+     * @return array
      */
-    public function testOffsetExists()
+    private function createResponse()
     {
-        $json = [
+        return [
             'data' => [
                 ['foo' => uniqid()],
                 ['foo' => uniqid()],
                 ['foo' => uniqid()]
             ]
         ];
+    }
+
+    /**
+     * Ensures that the offset exists method is setup correctly.
+     */
+    public function testOffsetExists()
+    {
+        $json = $this->createResponse();
 
         $response = new Response(200, [], json_encode($json));
 
@@ -36,13 +46,7 @@ class CollectionTest extends TestCase
      */
     public function testOffsetGet()
     {
-        $json = [
-            'data' => [
-                ['foo' => uniqid()],
-                ['foo' => uniqid()],
-                ['foo' => uniqid()]
-            ]
-        ];
+        $json = $this->createResponse();
 
         $response = new Response(200, [], json_encode($json));
 
@@ -56,13 +60,7 @@ class CollectionTest extends TestCase
      */
     public function testOffsetSet()
     {
-        $json = [
-            'data' => [
-                ['foo' => uniqid()],
-                ['foo' => uniqid()],
-                ['foo' => uniqid()]
-            ]
-        ];
+        $json = $this->createResponse();
 
         $response = new Response(200, [], json_encode($json));
 
@@ -82,13 +80,7 @@ class CollectionTest extends TestCase
      */
     public function testOffsetUnSet()
     {
-        $json = [
-            'data' => [
-                ['foo' => uniqid()],
-                ['foo' => uniqid()],
-                ['foo' => uniqid()]
-            ]
-        ];
+        $json = $this->createResponse();
 
         $response = new Response(200, [], json_encode($json));
 
@@ -106,13 +98,7 @@ class CollectionTest extends TestCase
      */
     public function testCollectionCanBeInterated()
     {
-        $json = [
-            'data' => [
-                ['foo' => uniqid()],
-                ['foo' => uniqid()],
-                ['foo' => uniqid()]
-            ]
-        ];
+        $json = $this->createResponse();
 
         $response = new Response(200, [], json_encode($json));
 
