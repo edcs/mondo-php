@@ -1,8 +1,6 @@
 <?php
 
-namespace Edcs\Mondo\Entitites\Accounts;
-
-use Edcs\Mondo\Entitites\Entity;
+namespace Edcs\Mondo\Entitites;
 
 /**
  * An object descibing a mondo bank account.

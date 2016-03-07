@@ -1,8 +1,6 @@
 <?php
 
-namespace Edcs\Mondo\Entitites\Ping;
-
-use Edcs\Mondo\Entitites\Entity;
+namespace Edcs\Mondo\Entitites;
 
 /**
  * An onject describing the access token used for an api request.
