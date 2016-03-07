@@ -24,13 +24,6 @@ class Collection implements ArrayAccess, Iterator
     private $entity;
 
     /**
-     * An array of constructed entities.
-     *
-     * @var array
-     */
-    private $cached;
-
-    /**
      * The current itteration position.
      *
      * @var int
@@ -73,11 +66,11 @@ class Collection implements ArrayAccess, Iterator
      */
     public function offsetGet($key)
     {
-        if (!isset($this->cached[$key])) {
-            $this->cached[$key] = new $this->entity($this->body[$key]);
+        if (is_array($this->body[$key])) {
+            $this->body[$key] = new $this->entity($this->body[$key]);
         }
 
-        return $this->cached[$key];
+        return $this->body[$key];
     }
 
     /**
@@ -90,18 +83,14 @@ class Collection implements ArrayAccess, Iterator
      */
     public function offsetSet($key, $value)
     {
-        if (is_array($value)) {
-            $property = 'body';
-        } elseif ($value instanceof Entity) {
-            $property = 'cache';
-        } else {
+        if (!is_array($value) && !is_subclass_of($value, Entity::class)) {
             throw new InvalidEntity('Value should either be type array or an instance of '.Entity::class);
         }
 
         if (is_null($key)) {
-            $this->{$property}[] = $value;
+            $this->body[] = $value;
         } else {
-            $this->{$property}[$key] = $value;
+            $this->body[$key] = $value;
         }
     }
 

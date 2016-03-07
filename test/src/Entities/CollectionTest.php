@@ -70,9 +70,11 @@ class CollectionTest extends TestCase
 
         $collection[0]['foo'] = $unique = uniqid();
         $collection[] = ['foo' => $unique];
+        $collection[] = new EntityStub(['foo' => $unique]);
 
         $this->assertEquals($unique, $collection[0]['foo']);
         $this->assertEquals($unique, $collection[3]['foo']);
+        $this->assertEquals($unique, $collection[4]['foo']);
     }
 
     /**
@@ -96,7 +98,7 @@ class CollectionTest extends TestCase
     /**
      * Ensures that a collection can be iterated and returns an entity instance.
      */
-    public function testCollectionCanBeInterated()
+    public function testCollectionCanBeIterated()
     {
         $json = $this->createResponse();
 
