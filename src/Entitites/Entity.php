@@ -3,7 +3,7 @@
 namespace Edcs\Mondo\Entitites;
 
 use ArrayAccess;
-use Edcs\Mondo\Exceptions\MethodDoesNotExist;
+use Edcs\Mondo\Exceptions\InvalidMethodException;
 use Edcs\Mondo\Support\Str;
 use InvalidArgumentException;
 use Psr\Http\Message\ResponseInterface;
@@ -41,7 +41,7 @@ abstract class Entity implements ArrayAccess
      * @param string $name
      * @param array $arguments
      * @return string
-     * @throws MethodDoesNotExist
+     * @throws InvalidMethodException
      */
     public function __call($name, $arguments)
     {
@@ -51,7 +51,7 @@ abstract class Entity implements ArrayAccess
             return $this->offsetGet($key);
         }
 
-        throw new MethodDoesNotExist('The method '.$name.' does not exist in '.get_class($this));
+        throw new InvalidMethodException('The method '.$name.' does not exist in '.get_class($this));
     }
 
     /**

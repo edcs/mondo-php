@@ -2,7 +2,7 @@
 
 namespace Edcs\Mondo\Exceptions;
 
-class MethodDoesNotExist extends MondoException
+class InvalidMethodException extends MondoException
 {
     //
 }
