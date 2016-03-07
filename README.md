@@ -105,9 +105,11 @@ $entity->getSpendToday(); // Returns the amount spent today in pence for this ac
 
 This resource contains the following methods:
 
- * `get($accountId)` - Returns a `Collection` of `Transaction` entities which describe the transactions on the supplied account.
+ * `get($accountId)` - Returns a `Collection` of `Transaction` entities which describe the transactions on the supplied 
+ account.
  * `find($transactionId)` - Returns a `Transaction` entity instance which describe the supplied transaction.
- * `anotate($transactionId, $anotation)` - Creates a new anotation and a `Transaction` entity instance which describe the supplied transaction.
+ * `annotate($transactionId, $annotation)` - Creates a new annotation and a `Transaction` entity instance which describe 
+ the supplied transaction.
  
 ```php
 $accountId = 'acc_00009237aqC8c5umZmrRdh';
