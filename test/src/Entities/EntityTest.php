@@ -76,4 +76,42 @@ class EntityTest extends TestCase
 
         $this->assertFalse($stub->offsetExists('bar'));
     }
+
+    /**
+     * Ensures that an entity can be created with an array.
+     */
+    public function testEntityCanBeCreatedWithArray()
+    {
+        $data = ['foo' => uniqid()];
+
+        $stub = new EntityStub($data);
+
+        $this->assertEquals($data['foo'], $stub['foo']);
+    }
+
+    /**
+     * Ensures that entity properties can be accessed with getters created via a magic method.
+     */
+    public function testPropertiesCanBeAccessedViaMagicMethod()
+    {
+        $data = ['foo' => uniqid()];
+
+        $stub = new EntityStub($data);
+
+        $this->assertEquals($data['foo'], $stub->getFoo());
+    }
+
+    /**
+     * Ensures that an exception is thrown if a call to a non-existant property getter is made.
+     *
+     * @expectedException \Edcs\Mondo\Exceptions\InvalidMethodException
+     */
+    public function testExceptionIsThrownIfPropertyDoesNotExist()
+    {
+        $data = ['foo' => uniqid()];
+
+        $stub = new EntityStub($data);
+
+        $this->assertEquals($data['foo'], $stub->getBar());
+    }
 }
