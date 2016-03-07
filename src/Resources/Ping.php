@@ -10,6 +10,8 @@ class Ping extends Resource
     /**
      * Returns information about the current access token.
      *
+     * @link https://getmondo.co.uk/docs/#authenticating-requests
+     *
      * @return WhoAmI
      */
     public function whoAmI()
