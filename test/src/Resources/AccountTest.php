@@ -2,7 +2,8 @@
 
 namespace Edcs\Mondo\Test\Resources;
 
-use Edcs\Mondo\Entitites\Accounts\Account;
+use Edcs\Mondo\Entitites\Account;
+use Edcs\Mondo\Resources\Accounts;
 use Edcs\Mondo\Test\TestCase;
 use Exception;
 use GuzzleHttp\Psr7\Response;
@@ -34,7 +35,7 @@ class AccountTest extends TestCase
                ->once()
                ->andReturn(new Response(200, [], json_encode($json)));
 
-        $accounts = new \Edcs\Mondo\Resources\Accounts($client);
+        $accounts = new Accounts($client);
 
         $collection = $accounts->get();
 
@@ -66,7 +67,7 @@ class AccountTest extends TestCase
                    401
                );
 
-        $accounts = new \Edcs\Mondo\Resources\Accounts($client);
+        $accounts = new Accounts($client);
 
         $accounts->get();
     }

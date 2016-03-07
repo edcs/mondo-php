@@ -2,6 +2,7 @@
 
 namespace Edcs\Mondo\Test\Resources;
 
+use Edcs\Mondo\Resources\Ping;
 use Edcs\Mondo\Test\TestCase;
 use Exception;
 use GuzzleHttp\Psr7\Response;
@@ -27,7 +28,7 @@ class PingTest extends TestCase
                ->once()
                ->andReturn(new Response(200, [], json_encode($json)));
 
-        $ping = new \Edcs\Mondo\Resources\Ping($client);
+        $ping = new Ping($client);
 
         $response = $ping->whoAmI();
 
@@ -53,7 +54,7 @@ class PingTest extends TestCase
                    401
                );
 
-        $ping = new \Edcs\Mondo\Resources\Ping($client);
+        $ping = new Ping($client);
 
         $ping->whoAmI();
     }
