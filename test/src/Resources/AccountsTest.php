@@ -10,7 +10,7 @@ use GuzzleHttp\Psr7\Response;
 use Http\Adapter\Guzzle6\Client;
 use Mockery as m;
 
-class AccountTest extends TestCase
+class AccountsTest extends TestCase
 {
     /**
      * Ensures that a collection of account entities are returned by the get accounts resource.
