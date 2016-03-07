@@ -3,7 +3,7 @@
 namespace Edcs\Mondo\Resources;
 
 use Edcs\Mondo\Entitites\Collection;
-use Edcs\Mondo\Entitites\Accounts\Account;
+use Edcs\Mondo\Entitites\Account;
 use GuzzleHttp\Psr7\Request;
 
 class Accounts extends Resource

@@ -2,7 +2,7 @@
 
 namespace Edcs\Mondo\Resources;
 
-use Edcs\Mondo\Entitites\Ping\WhoAmI;
+use Edcs\Mondo\Entitites\WhoAmI;
 use GuzzleHttp\Psr7\Request;
 
 class Ping extends Resource
