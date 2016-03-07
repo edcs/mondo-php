@@ -71,10 +71,12 @@ class CollectionTest extends TestCase
         $collection[0]['foo'] = $unique = uniqid();
         $collection[] = ['foo' => $unique];
         $collection[] = new EntityStub(['foo' => $unique]);
+        $collection['bar'] = ['foo' => $unique];
 
         $this->assertEquals($unique, $collection[0]['foo']);
         $this->assertEquals($unique, $collection[3]['foo']);
         $this->assertEquals($unique, $collection[4]['foo']);
+        $this->assertEquals($unique, $collection['bar']['foo']);
     }
 
     /**
@@ -93,6 +95,22 @@ class CollectionTest extends TestCase
         $collection->offsetUnset(2);
 
         $this->assertFalse($collection->offsetExists(2));
+    }
+
+    /**
+     * Ensures that an exception is thrown when an invalid entity is set.
+     *
+     * @expectedException \Edcs\Mondo\Exceptions\InvalidEntity
+     */
+    public function testOffsetCannotBeSetWithInvalidType()
+    {
+        $json = $this->createResponse();
+
+        $response = new Response(200, [], json_encode($json));
+
+        $collection = new Collection($response, 'data', EntityStub::class);
+
+        $collection[] = rand(0, 100);
     }
 
     /**
