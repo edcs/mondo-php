@@ -139,3 +139,17 @@ $metadata = [
 
 $entity = $this->annotate($transactionId , $metadata); // Entity methods described above.
 ```
+
+## Contributing
+
+Please see [CONTRIBUTING](https://github.com/edcs/mondo-php/blob/master/CONTRIBUTING.md) for details.
+
+## Security Vulnerabilities
+
+If you discover a security vulnerability within this package, please send an e-mail to Edward Coleridge Smith at 
+edcoleridgesmith@gmail.com. All security vulnerabilities will be promptly addressed.
+
+## License
+
+The MIT License (MIT). Please see [License File](https://github.com/edcs/mondo-php/blob/master/LICENSE) for 
+more information.
