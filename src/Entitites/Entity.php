@@ -5,6 +5,7 @@ namespace Edcs\Mondo\Entitites;
 use ArrayAccess;
 use Edcs\Mondo\Exceptions\MethodDoesNotExist;
 use Edcs\Mondo\Support\Str;
+use InvalidArgumentException;
 use Psr\Http\Message\ResponseInterface;
 
 abstract class Entity implements ArrayAccess
@@ -25,8 +26,12 @@ abstract class Entity implements ArrayAccess
     {
         if (is_array($response)) {
             $this->body = $response;
-        } else {
+        } elseif ($response instanceof ResponseInterface) {
             $this->body = json_decode($response->getBody()->getContents(), true);
+        } else {
+            throw new InvalidArgumentException(
+                'Entities can only be constructed with arrays or instances of '.ResponseInterface::class
+            );
         }
     }
 
