@@ -16,6 +16,7 @@ namespace Edcs\Mondo\Entitites;
  * @method array getMerchant() Getter for the merchant information array.
  * @method array getMetadata() Getter for any metadata associated with this transaction.
  * @method array getNotes() Getter for any notes associated with this transaction.
+ * @method array getCategory() Getter for the category of this transaction.
  * @method boolean getIsLoad() Getter for the is load property of the transaction.
  * @method boolean|string getSettled() Getter for the settled property - returns boolean or the dat when the transaction was settled.
  */
