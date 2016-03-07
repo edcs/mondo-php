@@ -3,9 +3,9 @@
 namespace Edcs\Mondo\Entitites;
 
 use ArrayAccess;
+use Edcs\Mondo\Exceptions\InvalidArgumentException;
 use Edcs\Mondo\Exceptions\InvalidMethodException;
 use Edcs\Mondo\Support\Str;
-use InvalidArgumentException;
 use Psr\Http\Message\ResponseInterface;
 
 abstract class Entity implements ArrayAccess
@@ -21,6 +21,7 @@ abstract class Entity implements ArrayAccess
      * Entity constructor.
      *
      * @param array|ResponseInterface $response
+     * @throws InvalidArgumentException
      */
     public function __construct($response)
     {
