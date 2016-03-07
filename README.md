@@ -151,5 +151,5 @@ edcoleridgesmith@gmail.com. All security vulnerabilities will be promptly addres
 
 ## License
 
-The MIT License (MIT). Please see [License File](https://github.com/edcs/mondo-php/blob/master/LICENSE) for 
+The MIT License (MIT). Please see [License File](https://github.com/edcs/mondo-php/blob/master/LICENSE.md) for 
 more information.
