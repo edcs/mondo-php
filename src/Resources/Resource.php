@@ -4,6 +4,7 @@ namespace Edcs\Mondo\Resources;
 
 use Edcs\Mondo\Exceptions\HttpException;
 use Exception;
+use GuzzleHttp\Psr7\MultipartStream;
 use Http\Client\HttpClient;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
@@ -45,5 +46,23 @@ abstract class Resource
         }
 
         return $response;
+    }
+
+    /**
+     * Converts an array of parameters into a multipart stream which can be used in an api request.
+     *
+     * @param array $parameters
+     * @param $name
+     * @return MultipartStream
+     */
+    protected function parseParameters(array $parameters, $name)
+    {
+        $parsed = [];
+
+        foreach ($parameters as $key => $value) {
+            $parsed["{$name}[{$key}]"] = $value;
+        }
+
+        return \GuzzleHttp\Psr7\build_query($parsed, false);
     }
 }
