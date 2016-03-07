@@ -3,6 +3,7 @@
 namespace Edcs\Mondo\Test\Resources;
 
 use Edcs\Mondo\Test\TestCase;
+use Exception;
 use GuzzleHttp\Psr7\Response;
 use Http\Adapter\Guzzle6\Client;
 use Mockery as m;
@@ -46,7 +47,11 @@ class PingTest extends TestCase
 
         $client->shouldReceive('sendRequest')
                ->once()
-               ->andReturn(new Response(401));
+               ->andThrow(
+                   Exception::class,
+                   'Client error: `GET https://api.getmondo.co.uk/` resulted in a `401 UNAUTHORIZED` response: {}',
+                   401
+               );
 
         $ping = new \Edcs\Mondo\Resources\Ping($client);
 

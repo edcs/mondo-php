@@ -44,15 +44,6 @@ abstract class Resource
             throw new HttpException($e->getMessage(), $e->getCode());
         }
 
-        if ($response->getStatusCode() >= 400) {
-            throw new HttpException(
-                "Client error: `{$request->getMethod()} {$request->getUri()}` resulted in a ".
-                "`{$response->getStatusCode()} {$response->getReasonPhrase()}` response: ".
-                $response->getBody()->getContents(),
-                $response->getStatusCode()
-            );
-        }
-
         return $response;
     }
 }
