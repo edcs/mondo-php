@@ -4,35 +4,16 @@ namespace Edcs\Mondo\Entitites\Ping;
 
 use Edcs\Mondo\Entitites\Entity;
 
+/**
+ * An onject describing the access token used for an api request.
+ *
+ * @link https://getmondo.co.uk/docs/#authenticating-requests
+ *
+ * @method boolean getAuthenticated() Whether or not the access token is authenticated.
+ * @method string getClientId() Getter for the client id for the access token.
+ * @method string getUserId() Getter for the id of the user associated with the access token.
+ */
 class WhoAmI extends Entity
 {
-    /**
-     * Returns true if the access token is authenticated, otherwise returns false.
-     *
-     * @return bool
-     */
-    public function getAuthenticated()
-    {
-        return $this->offsetGet('authenticated');
-    }
-
-    /**
-     * Returns the client id.
-     *
-     * @return string
-     */
-    public function getClientId()
-    {
-        return $this->offsetGet('client_id');
-    }
-
-    /**
-     * Returns the id of the user who owns this access token.
-     *
-     * @return string
-     */
-    public function getUserId()
-    {
-        return $this->offsetGet('user_id');
-    }
+    //
 }
