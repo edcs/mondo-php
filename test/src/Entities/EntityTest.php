@@ -19,8 +19,8 @@ class EntityTest extends TestCase
 
         $stub = new EntityStub($response);
 
-        $this->assertTrue($stub->offsetExists('foo', $stub));
-        $this->assertFalse($stub->offsetExists('bar', $stub));
+        $this->assertTrue($stub->offsetExists('foo'));
+        $this->assertFalse($stub->offsetExists('bar'));
     }
 
     /**
