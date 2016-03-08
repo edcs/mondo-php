@@ -7,6 +7,8 @@
 This package is a [PHP-HTTP](http://docs.php-http.org/en/latest/index.html) and [PSR-7](http://www.php-fig.org/psr/psr-7/)
 compatible client for accessing the Mondo API in your PHP projects.
 
+This package is currently in development, please use `dev-master` for now.
+
 ## Installation
 
 You can install this project using Composer. Though you'll need to choose your PHP-HTTP client before you can install 
