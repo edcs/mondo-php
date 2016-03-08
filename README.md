@@ -142,6 +142,12 @@ $metadata = [
 $entity = $this->annotate($transactionId , $metadata); // Entity methods described above.
 ```
 
+## Testing
+
+``` bash
+$ ./vendor/bin/phpunit
+```
+
 ## Contributing
 
 Please see [CONTRIBUTING](https://github.com/edcs/mondo-php/blob/master/CONTRIBUTING.md) for details.
