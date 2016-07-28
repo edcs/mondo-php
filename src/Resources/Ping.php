@@ -5,7 +5,7 @@ namespace Edcs\Mondo\Resources;
 use Edcs\Mondo\Entitites\WhoAmI;
 use GuzzleHttp\Psr7\Request;
 
-class Ping extends Resource
+class Ping extends ResourceAbstract
 {
     /**
      * Returns information about the current access token.

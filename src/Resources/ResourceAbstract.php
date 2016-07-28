@@ -9,7 +9,7 @@ use Http\Client\HttpClient;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
-abstract class Resource
+abstract class ResourceAbstract
 {
     /**
      * Instance of the http client.

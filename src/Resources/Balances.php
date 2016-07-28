@@ -5,7 +5,7 @@ namespace Edcs\Mondo\Resources;
 use Edcs\Mondo\Entitites\Balance;
 use GuzzleHttp\Psr7\Request;
 
-class Balances extends Resource
+class Balances extends ResourceAbstract
 {
     /**
      * Returns the balance of the supplied account.

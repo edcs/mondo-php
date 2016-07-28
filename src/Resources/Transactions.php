@@ -6,7 +6,7 @@ use Edcs\Mondo\Entitites\Collection;
 use Edcs\Mondo\Entitites\Transaction;
 use GuzzleHttp\Psr7\Request;
 
-class Transactions extends Resource
+class Transactions extends ResourceAbstract
 {
     /**
      * Returns a list of transactions for the supplied account.

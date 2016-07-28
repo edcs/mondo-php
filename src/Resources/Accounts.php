@@ -6,7 +6,7 @@ use Edcs\Mondo\Entitites\Account;
 use Edcs\Mondo\Entitites\Collection;
 use GuzzleHttp\Psr7\Request;
 
-class Accounts extends Resource
+class Accounts extends ResourceAbstract
 {
     /**
      * Returns a list of accounts owned by the currently authorised user.
